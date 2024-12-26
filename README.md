@@ -52,7 +52,11 @@ El Acortador de URLs es un proyecto práctico diseñado para introducir a estudi
 
 ## 🖼️ Previsualización del Proyecto
 
-![Vista previa del Acortador de URLs](acortador_url.png)
+[![Vista previa del Acortador de URLs](acortador_url.png)](https://juancitopena.github.io/ACORTADOR_URL/)
+
+🔗 [Ver proyecto en vivo](https://juancitopena.github.io/ACORTADOR_URL/)
+
+> **Nota**: Haz clic en la imagen o en el enlace para probar el acortador de URLs en funcionamiento.
 
 ## 📋 Características
 
