@@ -55,14 +55,34 @@ El archivo HTML define la estructura de la aplicación y carga los recursos nece
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://files.softicons.com/download/system-icons/lozengue-filetype-icons-by-gurato/ico/URL.ico" type="image/x-icon">
     <title>Acortador de URLs</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Contenido principal -->
+    <div class="container text-center">
+        <h1 class="my-4">Acortador de URLs</h1>
+        <img src="https://lh4.googleusercontent.com/proxy/vjSZQ-aTg8HJtwCcqdaKX1_PVpiKHJFUS4Jfrqq8To-i7UwlM_h5apZ0Zk7Hl-T8dQcv7kETTFGsyjGnplTCpp1UwYaJmurpe5F4v_dEx7OZBKw6vHmTe8KT6r-SbObg" alt="Logo" class="mb-4" style="width: 100px; height: auto;">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="longUrl" placeholder="Pega tu URL larga aquí">
+            <div class="input-group-append">
+                <button class="btn btn-primary" onclick="shortenUrl()">Recortar</button>
+            </div>
+        </div>
+        <div id="result" class="mt-3">
+            <p id="shortUrl" class="h4"></p>
+            <button id="visitButton" class="btn btn-success" style="display: none;" onclick="openInNewTab()">Visitar</button>
+            <button id="copyButton" class="btn btn-secondary" style="display: none;" onclick="copyToClipboard()">Copiar</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrap..com/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
 ```
 
 ### CSS (styles.css)
@@ -79,7 +99,20 @@ body {
     margin: 0;
 }
 
-/* Otros estilos */
+img {
+    margin: 20px 0;
+}
+
+input, button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#shortUrl {
+    font-weight: bold;
+}
+
 ```
 
 ### JavaScript (script.js)
@@ -89,9 +122,27 @@ Funcionalidad principal para acortar URLs y manejar las interacciones del usuari
 function shortenUrl() {
     const longUrl = document.getElementById('longUrl').value;
     if (longUrl) {
-        // Lógica de acortamiento
+        const url = new URL(longUrl);
+        const domain = url.hostname;
+        const uniqueId = Math.random().toString(36).substring(2, 8);
+        const shortUrl = `https://${domain}/short.url/${uniqueId}`;
+
+        document.getElementById('shortUrl').innerText = shortUrl;
+        document.getElementById('visitButton').style.display = 'inline';
+        document.getElementById('copyButton').style.display = 'inline';
+        document.getElementById('visitButton').setAttribute('onclick', `openInNewTab('${longUrl}')`);
     }
 }
+
+function copyToClipboard() {
+    const shortUrl = document.getElementById('shortUrl').innerText;
+    navigator.clipboard.writeText(shortUrl);
+}
+
+function openInNewTab(url) {
+    window.open(url, '_blank').focus();
+}
+
 
 // Otras funciones
 ```
