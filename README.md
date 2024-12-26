@@ -89,29 +89,34 @@ El archivo HTML define la estructura de la aplicación y carga los recursos nece
 Estilos personalizados para mejorar la apariencia de la aplicación:
 
 ```css
+/* Estilo general del cuerpo de la página */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+    font-family: Arial, sans-serif; /* Fuente Arial para el texto */
+    display: flex; /* Usar flexbox para el diseño */
+    flex-direction: column; /* Dirección del eje principal (columna) */
+    align-items: center; /* Centrar elementos horizontalmente */
+    justify-content: center; /* Centrar elementos verticalmente */
+    height: 100vh; /* Altura de la vista del navegador */
+    margin: 0; /* Eliminar margen predeterminado */
 }
 
+/* Estilo para la imagen del logo */
 img {
-    margin: 20px 0;
+    margin: 20px 0; /* Espaciado superior e inferior */
 }
 
+/* Estilo para inputs y botones */
 input, button {
-    margin: 10px;
-    padding: 10px;
-    font-size: 16px;
+    margin: 10px; /* Espaciado alrededor */
+    padding: 10px; /* Relleno interno */
+    font-size: 16px; /* Tamaño de la fuente */
 }
 
+/* Estilo para el texto de la URL acortada */
 #shortUrl {
-    font-weight: bold;
+    font-weight: bold; /* Texto en negrita */
 }
+
 
 ```
 
@@ -119,32 +124,49 @@ input, button {
 Funcionalidad principal para acortar URLs y manejar las interacciones del usuario:
 
 ```javascript
+// Función para acortar la URL
 function shortenUrl() {
+    // Obtiene la URL larga desde el input
     const longUrl = document.getElementById('longUrl').value;
+    
+    // Verifica que la URL no esté vacía
     if (longUrl) {
+        // Crea un objeto URL para extraer el dominio
         const url = new URL(longUrl);
         const domain = url.hostname;
+        
+        // Genera un ID único para la URL acortada
         const uniqueId = Math.random().toString(36).substring(2, 8);
+        
+        // Crea la URL acortada
         const shortUrl = `https://${domain}/short.url/${uniqueId}`;
 
+        // Muestra la URL acortada en el elemento con id 'shortUrl'
         document.getElementById('shortUrl').innerText = shortUrl;
+        
+        // Muestra los botones 'Visitar' y 'Copiar'
         document.getElementById('visitButton').style.display = 'inline';
         document.getElementById('copyButton').style.display = 'inline';
+        
+        // Configura el botón 'Visitar' para abrir la URL larga en una nueva pestaña
         document.getElementById('visitButton').setAttribute('onclick', `openInNewTab('${longUrl}')`);
     }
 }
 
+// Función para copiar la URL acortada al portapapeles
 function copyToClipboard() {
+    // Obtiene la URL acortada desde el elemento con id 'shortUrl'
     const shortUrl = document.getElementById('shortUrl').innerText;
+    
+    // Copia la URL acortada al portapapeles
     navigator.clipboard.writeText(shortUrl);
 }
 
+// Función para abrir una URL en una nueva pestaña
 function openInNewTab(url) {
     window.open(url, '_blank').focus();
 }
 
-
-// Otras funciones
 ```
 
 ## 🚀 Uso
