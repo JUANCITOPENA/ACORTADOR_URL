@@ -40,3 +40,16 @@ function copyToClipboard() {
 function openInNewTab(url) {
     window.open(url, '_blank').focus();
 }
+
+// Función para limpiar el formulario
+function clearForm() {
+    // Limpia el input
+    document.getElementById('longUrl').value = '';
+    
+    // Limpia la URL acortada
+    document.getElementById('shortUrl').innerText = '';
+    
+    // Oculta los botones
+    document.getElementById('visitButton').style.display = 'none';
+    document.getElementById('copyButton').style.display = 'none';
+}
