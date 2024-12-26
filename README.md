@@ -52,7 +52,7 @@ El Acortador de URLs es un proyecto práctico diseñado para introducir a estudi
 
 ## 🖼️ Previsualización del Proyecto
 
-![Vista previa del Acortador de URLs](https://lh4.googleusercontent.com/proxy/vjSZQ-aTg8HJtwCcqdaKX1_PVpiKHJFUS4Jfrqq8To-i7UwlM_h5apZ0Zk7Hl-T8dQcv7kETTFGsyjGnplTCpp1UwYaJmurpe5F4v_dEx7OZBKw6vHmTe8KT6r-SbObg)
+![Vista previa del Acortador de URLs](acortador_url.png)
 
 ## 📋 Características
 
