@@ -1,27 +1,27 @@
 /* Estilo general del cuerpo de la página */
 body {
-    font-family: Arial, sans-serif; /* Fuente Arial para el texto */
-    display: flex; /* Usar flexbox para el diseño */
-    flex-direction: column; /* Dirección del eje principal (columna) */
-    align-items: center; /* Centrar elementos horizontalmente */
-    justify-content: center; /* Centrar elementos verticalmente */
-    height: 100vh; /* Altura de la vista del navegador */
-    margin: 0; /* Eliminar margen predeterminado */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
 }
 
 /* Estilo para la imagen del logo */
 img {
-    margin: 20px 0; /* Espaciado superior e inferior */
+    margin: 20px 0;
 }
 
 /* Estilo para inputs y botones */
 input, button {
-    margin: 10px; /* Espaciado alrededor */
-    padding: 10px; /* Relleno interno */
-    font-size: 16px; /* Tamaño de la fuente */
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
 }
 
 /* Estilo para el texto de la URL acortada */
 #shortUrl {
-    font-weight: bold; /* Texto en negrita */
+    font-weight: bold;
 }

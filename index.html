@@ -11,7 +11,8 @@
 <body>
     <div class="container text-center">
         <h1 class="my-4">Acortador de URLs</h1>
-        <img src="https://lh4.googleusercontent.com/proxy/vjSZQ-aTg8HJtwCcqdaKX1_PVpiKHJFUS4Jfrqq8To-i7UwlM_h5apZ0Zk7Hl-T8dQcv7kETTFGsyjGnplTCpp1UwYaJmurpe5F4v_dEx7OZBKw6vHmTe8KT6r-SbObg" alt="Logo" class="mb-4" style="width: 100px; height: auto;">
+        <img src="https://lh4.googleusercontent.com/proxy/vjSZQ-aTg8HJtwCcqdaKX1_PVpiKHJFUS4Jfrqq8To-i7UwlM_h5apZ0Zk7Hl-T8dQcv7kETTFGsyjGnplTCpp1UwYaJmurpe5F4v_dEx7OZBKw6vHmTe8KT6r-SbObg" 
+             alt="Logo" class="mb-4" style="width: 100px; height: auto;">
         <div class="input-group mb-3">
             <input type="text" class="form-control" id="longUrl" placeholder="Pega tu URL larga aquí">
             <div class="input-group-append">
@@ -21,14 +22,13 @@
         </div>
         <div id="result" class="mt-3">
             <p id="shortUrl" class="h4"></p>
-            <button id="visitButton" class="btn btn-success" style="display: none;" onclick="openInNewTab()">Visitar</button>
+            <button id="visitButton" class="btn btn-success" style="display: none;">Visitar</button>
             <button id="copyButton" class="btn btn-secondary" style="display: none;" onclick="copyToClipboard()">Copiar</button>
         </div>
-       
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrap..com/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
