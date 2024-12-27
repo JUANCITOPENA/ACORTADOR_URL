@@ -1,0 +1,15 @@
+{
+  "name": "acortador_url",
+  "version": "1.0.0",
+  "description": "Un acortador de URLs sencillo en Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "nanoid": "^5.0.9",
+    "cors": "^2.8.5"
+  }
+}
+
