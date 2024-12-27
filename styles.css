@@ -1,28 +1,33 @@
-
-/* Estilo general del cuerpo de la página */
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
     margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f9;
 }
 
-/* Estilo para la imagen del logo */
-img {
-    margin: 20px 0;
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para inputs y botones */
-input, button {
-    margin: 10px;
+input {
+    width: 80%;
     padding: 10px;
-    font-size: 16px;
+    margin: 10px 0;
 }
 
-/* Estilo para el texto de la URL acortada */
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
 #shortUrl {
     font-weight: bold;
+    margin: 20px 0;
 }

@@ -3,7 +3,6 @@ const { nanoid } = require('nanoid');
 const cors = require('cors');
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
@@ -39,8 +38,5 @@ app.get('/:shortId', (req, res) => {
     res.redirect(longUrl);
 });
 
-// Servidor escuchando
-app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
-});
-
+// Exportar la función para Vercel
+module.exports = app;
